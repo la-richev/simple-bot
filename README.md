@@ -1,2 +1,6 @@
-# simple-bot
+# Simple Bot
 Removes spam and sends to the eternal ban @kwikwinsio_bot
+
+--
+Python + aiogram lib
+So far it's like an experimental repository
