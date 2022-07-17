@@ -10,10 +10,20 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=config.TOKEN)
 dp = Dispatcher(bot)
 
-# echo / works like a parrot
-@dp.message_handler()
-async def echo(message: types.Message):
-    await message.answer(message.text)
+# # echo / works like a parrot
+# @dp.message_handler()
+# async def echo(message: types.Message):
+#     await message.answer(message.text)
+
+# start
+@dp.message_handler(commands=['start'])
+async def process_start_command(message: types.Message):
+    await message.reply("Привет!\nЯ твой персональный AI-помощник Mera!")
+
+# help
+@dp.message_handler(commands=['help'])
+async def process_help_command(message: types.Message):
+    await message.reply("Если я плохо себя веду, напиши @richev он все исправит!")
 
 # simple profanity check :3
 @dp.message_handler()
